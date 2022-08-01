@@ -1,0 +1,3 @@
+[submodule "image/part0/vender/stb"]
+	path = image/part0/vender/stb
+	url = https://github.com/nothings/stb
