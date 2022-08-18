@@ -1,4 +1,3 @@
-pub const c = @cImport({
-    @cDefine("STB_IMAGE_IMPLEMENTATION", "");
+pub usingnamespace @cImport({
     @cInclude("stb_image.h");
 });

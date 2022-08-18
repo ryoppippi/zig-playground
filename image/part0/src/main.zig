@@ -1,11 +1,9 @@
 const std = @import("std");
-const c = @import("c.zig").c;
+const c = @import("c.zig");
 
-pub fn main() anyerror!void {
-    var x: c_int = 0;
-    var y: c_int = 0;
-    var n: c_int = 0;
-    const res = c.stbi_load("./image001.png", &x, &y, &n, c.STBI_grey);
-    defer c.stbi_image_free(res);
-    std.debug.print("{}", .{res.*});
+pub fn main() !void {
+    var width: c_int = undefined;
+    var height: c_int = undefined;
+    _ = c.stbi_load("./lena_color.png", &width, &height, null, 0);
+    std.debug.print("width:{d}, height:{d}", .{ width, height });
 }
