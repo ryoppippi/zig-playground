@@ -14,7 +14,6 @@ pub fn build(b: *std.build.Builder) void {
     const exe = b.addExecutable("part0", "src/main.zig");
     exe.setTarget(target);
     exe.setBuildMode(mode);
-    exe.addCSourceFile("stb/stb_image.c", &[_][]const u8{"-std=c99"});
     exe.addIncludeDir("stb");
     exe.install();
 
